@@ -1,9 +1,9 @@
 
 # react-native-textinput-multiline
 
-### This library is just a temporary workaround for the TextInput multiline bug. It's not meant to be used for production.
+### This library is just a temporary workaround for the TextInput multiline bug. It's not meant to be used for production as it relies on native React Native implementation and that could change between versions.
 
-This library is meant to be used to fix an Android Native bug that prevents the input from breaking line when set to multiline and a numeric keyboardType. On iOS it just provides the native TextInput from react-native, and on Android it extends the default react-native TextInput to provide the bug fix.
+This library is meant to be used to fix an Android Native bug that prevents the input from breaking line when set to multiline and a numeric keyboardType. On iOS it just provides the native TextInput from react-native, and on Android it extends the default React Native TextInput to provide the bug fix.
 
 ## Getting started
 
@@ -15,18 +15,14 @@ This library is meant to be used to fix an Android Native bug that prevents the 
 
 ### Manual installation
 
-
 #### iOS
 
-1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-textinput-multiline` and add `RNReactNativeTextinputMultiline.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNReactNativeTextinputMultiline.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-4. Run your project (`Cmd+R`)<
+There is no need for iOS installations as it exposes the native React Native TextInput on that platform.
 
 #### Android
 
 1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import com.reactlibrary.RNReactNativeTextinputMultilinePackage;` to the imports at the top of the file
+  - Add `import com.muritavo.RNReactNativeTextinputMultilinePackage;` to the imports at the top of the file
   - Add `new RNReactNativeTextinputMultilinePackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
   	```
@@ -37,14 +33,6 @@ This library is meant to be used to fix an Android Native bug that prevents the 
   	```
       compile project(':react-native-textinput-multiline')
   	```
-
-#### Windows
-[Read it! :D](https://github.com/ReactWindows/react-native)
-
-1. In Visual Studio add the `RNReactNativeTextinputMultiline.sln` in `node_modules/react-native-textinput-multiline/windows/RNReactNativeTextinputMultiline.sln` folder to their solution, reference from their app.
-2. Open up your `MainPage.cs` app
-  - Add `using React.Native.Textinput.Multiline.RNReactNativeTextinputMultiline;` to the usings at the top of the file
-  - Add `new RNReactNativeTextinputMultilinePackage()` to the `List<IReactPackage>` returned by the `Packages` method
 
 
 ## Usage
