@@ -1,4 +1,4 @@
-import { requireNativeComponent, TextInput, TouchableWithoutFeedback } from "react-native";
+import { requireNativeComponent, TextInput, TouchableWithoutFeedback, UIManager } from "react-native";
 import React from "react";
 import invariant from "invariant";
 
@@ -13,6 +13,7 @@ class TextInputMultilineFix extends TextInput {
     render() {
         const props = Object.assign({}, this.props);
         props.style = [this.props.style];
+        props.autoCapitalize = UIManager.RNReactNativeTextinputMultiline.Constants.AutoCapitalizationType[props.autoCapitalize || 'sentences'];
         /* $FlowFixMe(>=0.53.0 site=react_native_fb,react_native_oss) This comment
          * suppresses an error when upgrading Flow's support for React. To see the
          * error delete this comment and run Flow. */
